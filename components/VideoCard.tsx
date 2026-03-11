@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Video } from '@/lib/types';
 
 interface VideoCardProps {
@@ -13,9 +14,11 @@ export default function VideoCard({ video }: VideoCardProps) {
     <Link href={`/video/${video.id}`}>
       <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer h-full flex flex-col">
         <div className="relative pb-[56.25%] bg-gray-200 overflow-hidden">
-          <img
+          <Image
             src={video.thumbnail}
             alt={video.title}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform"
           />
           <div className="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white px-2 py-1 rounded text-sm font-medium">

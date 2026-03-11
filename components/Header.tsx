@@ -36,9 +36,9 @@ export default function Header() {
             <Link href="/playlists" className="hover:text-blue-100 transition">
               Playlists
             </Link>
-            <a href="#about" className="hover:text-blue-100 transition">
+            {/* <a href="#about" className="hover:text-blue-100 transition">
               About
-            </a>
+            </a> */}
           </nav>
 
           {/* Search Bar */}

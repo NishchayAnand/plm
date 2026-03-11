@@ -5,6 +5,7 @@ import VideoGrid from '@/components/VideoGrid';
 import { getVideos, getPlaylists } from '@/lib/data';
 import { Video, Playlist } from '@/lib/types';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   const [featuredVideos, setFeaturedVideos] = useState<Video[]>([]);
@@ -67,15 +68,17 @@ export default function Home() {
             <Link
               key={playlist.id}
               href={`/playlist/${playlist.id}`}
-              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition"
+              className="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition"
             >
               <div className="relative pb-[56.25%] bg-gray-200 overflow-hidden">
-                <img
+                <Image
                   src={playlist.thumbnail}
                   alt={playlist.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-30 hover:bg-opacity-40 transition flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <span className="text-white text-3xl">▶</span>
                 </div>
               </div>

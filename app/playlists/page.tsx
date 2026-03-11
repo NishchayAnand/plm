@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { getPlaylists } from '@/lib/data';
 import { Playlist } from '@/lib/types';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function PlaylistsPage() {
   const [playlists, setPlaylists] = useState<Playlist[]>([]);
@@ -51,13 +52,15 @@ export default function PlaylistsPage() {
             >
               {/* Thumbnail */}
               <div className="relative pb-[56.25%] bg-gray-200 overflow-hidden">
-                <img
+                <Image
                   src={playlist.thumbnail}
                   alt={playlist.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-40 transition flex items-center justify-center">
-                  <span className="text-white text-4xl opacity-0 group-hover:opacity-100 transition">▶</span>
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span className="text-white text-3xl">▶</span>
                 </div>
                 {/* Video Count Badge */}
                 <div className="absolute top-3 right-3 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">

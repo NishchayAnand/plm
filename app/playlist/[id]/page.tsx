@@ -5,6 +5,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { getPlaylists } from '@/lib/data';
 import { Playlist } from '@/lib/types';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function PlaylistDetailPage() {
   const params = useParams();
@@ -48,6 +49,10 @@ export default function PlaylistDetailPage() {
     );
   }
 
+  const totalMinutes = Math.floor(
+    playlist.videos.reduce((acc, v) => acc + v.duration, 0) / 60
+  );
+
   return (
     <div className="space-y-8">
       {/* Back Button */}
@@ -59,42 +64,45 @@ export default function PlaylistDetailPage() {
       </button>
 
       {/* Playlist Header */}
-      <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-8">
+      <div className="overflow-hidden rounded-2xl border border-blue-100 bg-linear-to-br from-blue-50 via-white to-sky-50 shadow-lg">
+        <div className="grid grid-cols-1 gap-6 p-5 md:grid-cols-3 md:gap-8 md:p-8">
           {/* Thumbnail */}
           <div className="md:col-span-1">
-            <img
-              src={playlist.thumbnail}
-              alt={playlist.title}
-              className="w-full rounded-lg shadow-md"
-            />
+            <div className="relative overflow-hidden rounded-xl border border-blue-100 shadow-md">
+              <Image
+                src={playlist.thumbnail}
+                alt={playlist.title}
+                width={800}
+                height={450}
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="h-auto w-full"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/30 via-black/5 to-transparent" />
+            </div>
           </div>
 
           {/* Info */}
-          <div className="md:col-span-2 space-y-4">
-            <h1 className="text-4xl font-bold">{playlist.title}</h1>
-            <p className="text-gray-600 text-lg">{playlist.description}</p>
+          <div className="md:col-span-2 space-y-5">
+            <div className="space-y-3">
+              <h1 className="text-3xl font-bold leading-tight text-gray-900 md:text-4xl">{playlist.title}</h1>
+              <p className="text-base text-gray-600 md:text-lg">{playlist.description}</p>
+            </div>
 
-            <div className="space-y-2 pt-4 border-t">
-              <div className="flex justify-between text-gray-700">
-                <span>Total Videos:</span>
-                <span className="font-bold">{playlist.videos.length}</span>
+            <div className="flex flex-wrap gap-3">
+              <div className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-700 shadow-sm ring-1 ring-gray-200">
+                {playlist.videos.length} videos
               </div>
-              <div className="flex justify-between text-gray-700">
-                <span>Total Duration:</span>
-                <span className="font-bold">
-                  {Math.floor(
-                    playlist.videos.reduce((acc, v) => acc + v.duration, 0) / 60
-                  )}
-                  {' '}
-                  minutes
-                </span>
+              <div className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-700 shadow-sm ring-1 ring-gray-200">
+                {totalMinutes} minutes
+              </div>
+              <div className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-700 shadow-sm ring-1 ring-gray-200">
+                Updated {playlist.createdAt}
               </div>
             </div>
 
-            <button className="w-full mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition text-lg">
+            {/* <button className="mt-2 w-full rounded-lg bg-blue-600 px-6 py-3 text-lg font-semibold text-white transition hover:bg-blue-700 md:w-auto">
               Start Playlist →
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
@@ -102,35 +110,37 @@ export default function PlaylistDetailPage() {
       {/* Video List */}
       <div className="space-y-4">
         <h2 className="text-2xl font-bold">Videos in this Playlist</h2>
-        <div className="space-y-3">
-          {playlist.videos.map((video, index) => (
+        <div className="space-y-4">
+          {playlist.videos.map((video) => (
             <Link
               key={video.id}
               href={`/video/${video.id}`}
-              className="flex gap-4 p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition group"
+              className="group flex flex-col sm:flex-row gap-4 p-4 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-lg transition"
             >
               {/* Thumbnail */}
-              <div className="shrink-0 w-48 relative pb-[56.25%] bg-gray-200 rounded overflow-hidden">
-                <img
+              <div className="relative w-full aspect-video shrink-0 overflow-hidden rounded-lg bg-gray-200 sm:w-64 lg:w-72">
+                <Image
                   src={video.thumbnail}
                   alt={video.title}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 256px, 288px"
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform"
                 />
-                <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 group-hover:bg-opacity-30 transition">
-                  <span className="text-white text-2xl opacity-0 group-hover:opacity-100 transition">▶</span>
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span className="text-white text-3xl">▶</span>
                 </div>
               </div>
 
               {/* Info */}
-              <div className="flex-1 flex flex-col justify-between py-2">
+              <div className="flex-1 flex flex-col justify-between sm:py-1">
                 <div>
                   <div className="flex items-start gap-3 mb-2">
                     <span className="text-blue-600 font-bold text-xl">{video.order}.</span>
-                    <h3 className="font-bold text-lg flex-1">{video.title}</h3>
+                    <h3 className="font-bold text-lg flex-1 group-hover:text-blue-700 transition-colors">{video.title}</h3>
                   </div>
                   <p className="text-gray-600 text-sm line-clamp-2">{video.description}</p>
                 </div>
-                <div className="flex items-center gap-4 text-sm text-gray-500 mt-3">
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-500 mt-3">
                   <span>{Math.floor(video.duration / 60)} min</span>
                   <span>•</span>
                   <span>{video.level}</span>
