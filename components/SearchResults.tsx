@@ -28,7 +28,7 @@ export function SearchResults() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-4xl font-bold mb-2">Search Results</h1>
+        <h1 className="text-4xl font-bold mb-2">Search</h1>
         <p className="text-gray-600">
           {query && `Results for "${query}"`}
           {results.length > 0 && ` (${results.length} found)`}
