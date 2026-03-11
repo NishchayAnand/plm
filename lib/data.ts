@@ -169,11 +169,19 @@ export const mockPlaylists: Playlist[] = [
     videos: [
       { ...mockVideos[0], order: 1 },
       { ...mockVideos[1], order: 2 },
-      { ...mockVideos[2], order: 3 },
-      { ...mockVideos[3], order: 4 },
-      { ...mockVideos[4], order: 5 },
-      { ...mockVideos[5], order: 6 },
-      { ...mockVideos[6], order: 7 },
+    ],
+  },
+  {
+    id: 'pl3',
+    title: 'Intermediate PLM Module',
+    description: 'Essential intermediate workflows for day-to-day PLM operations',
+    thumbnail: '/thumbnail/7.PNG',
+    createdAt: '2026-03-11',
+    videos: [
+      { ...mockVideos[3], order: 1 },
+      { ...mockVideos[3], order: 2 },
+      { ...mockVideos[4], order: 3 },
+      { ...mockVideos[5], order: 4 },
     ],
   },
   {
@@ -183,10 +191,11 @@ export const mockPlaylists: Playlist[] = [
     thumbnail: '/thumbnail/advanced-module.png',
     createdAt: '2026-03-11',
     videos: [
-      { ...mockVideos[7], order: 1 },
-      { ...mockVideos[8], order: 2 },
-      { ...mockVideos[9], order: 2 },
-      { ...mockVideos[10], order: 2 },
+      { ...mockVideos[6], order: 1 },
+      { ...mockVideos[7], order: 2 },
+      { ...mockVideos[8], order: 3 },
+      { ...mockVideos[9], order: 4 },
+      { ...mockVideos[10], order: 5 },
     ],
   },
 ];

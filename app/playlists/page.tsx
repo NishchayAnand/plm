@@ -63,7 +63,7 @@ export default function PlaylistsPage() {
                   <span className="text-white text-3xl">▶</span>
                 </div>
                 {/* Video Count Badge */}
-                <div className="absolute top-3 right-3 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                <div className="absolute top-3 right-3 bg-teal-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                   {playlist.videos.length} videos
                 </div>
               </div>
@@ -74,10 +74,10 @@ export default function PlaylistsPage() {
                 <p className="text-gray-600 text-sm line-clamp-2">{playlist.description}</p>
 
                 {/* Video List Preview */}
-                <div className="space-y-2 pt-2 border-t">
+                {/* <div className="space-y-2 pt-2 border-t">
                   {playlist.videos.slice(0, 3).map((video) => (
                     <div key={video.id} className="flex items-start gap-2 text-xs text-gray-700">
-                      <span className="text-blue-600 font-bold">{video.order}.</span>
+                      <span className="text-teal-600 font-bold">{video.order}.</span>
                       <span className="line-clamp-1">{video.title}</span>
                     </div>
                   ))}
@@ -86,10 +86,10 @@ export default function PlaylistsPage() {
                       +{playlist.videos.length - 3} more videos
                     </p>
                   )}
-                </div>
+                </div> */}
 
                 {/* CTA */}
-                <button className="w-full mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">
+                <button className="w-full mt-4 bg-teal-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-teal-700 transition">
                   Start Learning
                 </button>
               </div>

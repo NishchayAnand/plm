@@ -24,19 +24,19 @@ export default function VideoCard({ video }: VideoCardProps) {
           <div className="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white px-2 py-1 rounded text-sm font-medium">
             {minutes}:{seconds.toString().padStart(2, '0')}
           </div>
-          <div className="absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 rounded text-xs font-semibold">
+          {/* <div className="absolute top-2 right-2 bg-teal-600 text-white px-2 py-1 rounded text-xs font-semibold">
             {video.level}
-          </div>
+          </div> */}
         </div>
         <div className="p-4 flex-1 flex flex-col">
           <h3 className="font-bold text-lg mb-2 line-clamp-2 text-gray-900">{video.title}</h3>
           <p className="text-gray-600 text-sm mb-3 line-clamp-2">{video.description}</p>
           <div className="mt-auto">
             {/* <p className="text-sm text-gray-500 mb-2">By {video.instructor}</p> */}
-            <div className="flex justify-between items-center text-xs text-gray-500">
+            {/* <div className="flex justify-between items-center text-xs text-gray-500">
               <span>{video.views.toLocaleString()} views</span>
               <span className="bg-gray-100 px-2 py-1 rounded">{video.category}</span>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

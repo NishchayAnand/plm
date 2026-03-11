@@ -73,7 +73,7 @@ export default function VideoPlayerPage() {
     return (
       <div className="text-center py-12">
         <h1 className="text-2xl font-bold mb-4">Video not found</h1>
-        <Link href="/catalog" className="text-blue-600 hover:text-blue-800">
+        <Link href="/catalog" className="text-teal-600 hover:text-teal-800">
           Back to Catalog
         </Link>
       </div>
@@ -90,7 +90,7 @@ export default function VideoPlayerPage() {
       {/* Back Button */}
       <button
         onClick={() => router.back()}
-        className="text-blue-600 hover:text-blue-800 font-semibold flex items-center gap-2"
+        className="text-teal-600 hover:text-teal-800 font-semibold flex items-center gap-2"
       >
         ← Back
       </button>
@@ -170,7 +170,7 @@ export default function VideoPlayerPage() {
                   {video.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm"
+                      className="bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-sm"
                     >
                       {tag}
                     </span>

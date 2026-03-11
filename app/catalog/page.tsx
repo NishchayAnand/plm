@@ -81,12 +81,12 @@ export default function CatalogPage() {
                   placeholder="Search videos..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-600"
                 />
                 <div className="flex gap-2">
                   <button
                     type="submit"
-                    className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                    className="flex-1 bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition"
                   >
                     Search
                   </button>
@@ -112,9 +112,9 @@ export default function CatalogPage() {
             /> */}
 
             {/* Results Summary */}
-            <div className="bg-blue-50 p-4 rounded-lg">
+            <div className="bg-teal-50 p-4 rounded-lg">
               <p className="text-sm text-gray-700">
-                <span className="font-bold text-lg text-blue-600">{filteredVideos.length}</span>{' '}
+                <span className="font-bold text-lg text-teal-600">{filteredVideos.length}</span>{' '}
                 video{filteredVideos.length !== 1 ? 's' : ''} found
               </p>
             </div>

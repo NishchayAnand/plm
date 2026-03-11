@@ -17,12 +17,12 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-linear-to-r from-blue-600 to-blue-800 text-white sticky top-0 z-50 shadow-lg">
+    <header className="bg-linear-to-r from-teal-600 to-teal-800 text-white sticky top-0 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto px-10 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 font-bold text-lg">
-            <div className="w-8 h-8 bg-white rounded flex items-center justify-center text-blue-600">
+            <div className="w-8 h-8 bg-white rounded flex items-center justify-center text-teal-600">
               📚
             </div>
             <span className="hidden sm:inline">PLM Library</span>
@@ -30,13 +30,13 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            <Link href="/catalog" className="hover:text-blue-100 transition">
+            <Link href="/catalog" className="hover:text-teal-100 transition">
               Explore
             </Link>
-            <Link href="/playlists" className="hover:text-blue-100 transition">
+            <Link href="/playlists" className="hover:text-teal-100 transition">
               Playlists
             </Link>
-            {/* <a href="#about" className="hover:text-blue-100 transition">
+            {/* <a href="#about" className="hover:text-teal-100 transition">
               About
             </a> */}
           </nav>
@@ -66,15 +66,15 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden pb-4 border-t border-blue-500">
+          <div className="md:hidden pb-4 border-t border-teal-500">
             <nav className="flex flex-col space-y-3 pt-4">
-              <Link href="/catalog" className="hover:text-blue-100 transition">
+              <Link href="/catalog" className="hover:text-teal-100 transition">
                 Explore
               </Link>
-              <Link href="/playlists" className="hover:text-blue-100 transition">
+              <Link href="/playlists" className="hover:text-teal-100 transition">
                 Playlists
               </Link>
-              <a href="#about" className="hover:text-blue-100 transition">
+              <a href="#about" className="hover:text-teal-100 transition">
                 About
               </a>
             </nav>
@@ -85,7 +85,7 @@ export default function Header() {
                   placeholder="Search videos..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="bg-transparent outline-none flex-1 text-white placeholder-blue-100"
+                  className="bg-transparent outline-none flex-1 text-white placeholder-teal-100"
                 />
                 <button type="submit" className="text-white">
                   🔍

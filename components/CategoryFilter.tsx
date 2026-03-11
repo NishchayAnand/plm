@@ -21,7 +21,7 @@ export default function CategoryFilter({
           onClick={() => onSelectCategory(null)}
           className={`px-4 py-2 rounded-full transition ${
             selectedCategory === null
-              ? 'bg-blue-600 text-white'
+              ? 'bg-teal-600 text-white'
               : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
           }`}
         >
@@ -33,7 +33,7 @@ export default function CategoryFilter({
             onClick={() => onSelectCategory(category)}
             className={`px-4 py-2 rounded-full transition ${
               selectedCategory === category
-                ? 'bg-blue-600 text-white'
+                ? 'bg-teal-600 text-white'
                 : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
             }`}
           >

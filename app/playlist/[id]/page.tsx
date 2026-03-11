@@ -42,7 +42,7 @@ export default function PlaylistDetailPage() {
     return (
       <div className="text-center py-12">
         <h1 className="text-2xl font-bold mb-4">Playlist not found</h1>
-        <Link href="/playlists" className="text-blue-600 hover:text-blue-800">
+        <Link href="/playlists" className="text-teal-600 hover:text-teal-800">
           Back to Playlists
         </Link>
       </div>
@@ -58,17 +58,17 @@ export default function PlaylistDetailPage() {
       {/* Back Button */}
       <button
         onClick={() => router.back()}
-        className="text-blue-600 hover:text-blue-800 font-semibold flex items-center gap-2"
+        className="text-teal-600 hover:text-teal-800 font-semibold flex items-center gap-2"
       >
         ← Back
       </button>
 
       {/* Playlist Header */}
-      <div className="overflow-hidden rounded-2xl border border-blue-100 bg-linear-to-br from-blue-50 via-white to-sky-50 shadow-lg">
+      <div className="overflow-hidden rounded-2xl border border-teal-100 bg-linear-to-br from-teal-50 via-white to-teal-50 shadow-lg">
         <div className="grid grid-cols-1 gap-6 p-5 md:grid-cols-3 md:gap-8 md:p-8">
           {/* Thumbnail */}
           <div className="md:col-span-1">
-            <div className="relative overflow-hidden rounded-xl border border-blue-100 shadow-md">
+            <div className="relative overflow-hidden rounded-xl border border-teal-100 shadow-md">
               <Image
                 src={playlist.thumbnail}
                 alt={playlist.title}
@@ -100,7 +100,7 @@ export default function PlaylistDetailPage() {
               </div>
             </div>
 
-            {/* <button className="mt-2 w-full rounded-lg bg-blue-600 px-6 py-3 text-lg font-semibold text-white transition hover:bg-blue-700 md:w-auto">
+            {/* <button className="mt-2 w-full rounded-lg bg-teal-600 px-6 py-3 text-lg font-semibold text-white transition hover:bg-teal-700 md:w-auto">
               Start Playlist →
             </button> */}
           </div>
@@ -135,8 +135,8 @@ export default function PlaylistDetailPage() {
               <div className="flex-1 flex flex-col justify-between sm:py-1">
                 <div>
                   <div className="flex items-start gap-3 mb-2">
-                    <span className="text-blue-600 font-bold text-xl">{video.order}.</span>
-                    <h3 className="font-bold text-lg flex-1 group-hover:text-blue-700 transition-colors">{video.title}</h3>
+                    <span className="text-teal-600 font-bold text-xl">{video.order}.</span>
+                    <h3 className="font-bold text-lg flex-1 group-hover:text-teal-700 transition-colors">{video.title}</h3>
                   </div>
                   <p className="text-gray-600 text-sm line-clamp-2">{video.description}</p>
                 </div>

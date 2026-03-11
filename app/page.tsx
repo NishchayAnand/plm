@@ -27,33 +27,33 @@ export default function Home() {
     <div className="space-y-16">
       
       {/* Hero Section */}
-      <section className="bg-linear-to-r from-blue-600 to-blue-800 text-white rounded-lg p-8 md:p-12 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+      <section className="bg-linear-to-r from-teal-600 to-teal-800 text-white rounded-lg p-8 md:p-12 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Learn PLM Software</h1>
         <p className="text-lg md:text-xl mb-6 max-w-2xl">
           Master Product Lifecycle Management with our comprehensive video library designed for textile vendors.
           From basics to advanced integrations, we've got you covered.
         </p>
-        <div className="flex gap-4 flex-wrap">
+        {/* <div className="flex gap-4 flex-wrap">
           <Link
             href="/catalog"
-            className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition"
+            className="bg-white text-teal-600 px-6 py-3 rounded-lg font-semibold hover:bg-teal-50 transition"
           >
             Explore Catalog
           </Link>
           <Link
             href="/playlists"
-            className="bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition border border-white"
+            className="bg-teal-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-600 transition border border-white"
           >
             View Playlists
           </Link>
-        </div>
+        </div> */}
       </section>
 
       {/* Featured Videos Section */}
       <section>
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-3xl font-bold">Featured Videos</h2>
-          <Link href="/catalog" className="text-blue-600 hover:text-blue-800 font-semibold">
+          <Link href="/catalog" className="text-teal-600 hover:text-teal-800 font-semibold">
             View All →
           </Link>
         </div>
@@ -63,7 +63,7 @@ export default function Home() {
       {/* Playlists Section */}
       <section>
         <h2 className="text-3xl font-bold mb-6">Learning Paths</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {playlists.map((playlist) => (
             <Link
               key={playlist.id}
@@ -82,9 +82,9 @@ export default function Home() {
                   <span className="text-white text-3xl">▶</span>
                 </div>
               </div>
-              <div className="p-4">
-                <h3 className="font-bold text-lg mb-2">{playlist.title}</h3>
-                <p className="text-gray-600 text-sm mb-3">{playlist.description}</p>
+              <div className="p-3">
+                <h3 className="font-bold text-base mb-1 line-clamp-1">{playlist.title}</h3>
+                <p className="text-gray-600 text-xs mb-2 line-clamp-2">{playlist.description}</p>
                 <p className="text-sm text-gray-500">{playlist.videos.length} videos</p>
               </div>
             </Link>
@@ -100,7 +100,7 @@ export default function Home() {
         </p>
         <Link
           href="/catalog"
-          className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+          className="inline-block bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition"
         >
           Start Learning Today
         </Link>
