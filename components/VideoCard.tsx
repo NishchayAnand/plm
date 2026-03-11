@@ -29,7 +29,7 @@ export default function VideoCard({ video }: VideoCardProps) {
           <h3 className="font-bold text-lg mb-2 line-clamp-2 text-gray-900">{video.title}</h3>
           <p className="text-gray-600 text-sm mb-3 line-clamp-2">{video.description}</p>
           <div className="mt-auto">
-            <p className="text-sm text-gray-500 mb-2">By {video.instructor}</p>
+            {/* <p className="text-sm text-gray-500 mb-2">By {video.instructor}</p> */}
             <div className="flex justify-between items-center text-xs text-gray-500">
               <span>{video.views.toLocaleString()} views</span>
               <span className="bg-gray-100 px-2 py-1 rounded">{video.category}</span>
