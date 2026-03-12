@@ -127,11 +127,11 @@ export default function VideoPlayerPage() {
           <div>
             <h1 className="text-3xl font-bold mb-2">{video.title}</h1>
             <div className="flex flex-wrap gap-4 text-gray-600">
-              <span>By {video.instructor}</span>
-              <span>•</span>
-              <span>{minutes} minutes</span>
-              <span>•</span>
-              <span>{video.views.toLocaleString()} views</span>
+              {/* <span>By {video.instructor}</span>
+              <span>•</span> */}
+              {/* <span>{minutes} minutes</span> */}
+              {/* <span>•</span>
+              <span>{video.views.toLocaleString()} views</span> */}
             </div>
           </div>
 
@@ -146,24 +146,24 @@ export default function VideoPlayerPage() {
                 <p className="text-sm text-gray-600">Level</p>
                 <p className="font-semibold">{video.level}</p>
               </div>
-              <div>
+              {/* <div>
                 <p className="text-sm text-gray-600">Category</p>
                 <p className="font-semibold">{video.category}</p>
-              </div>
+              </div> */}
               <div>
                 <p className="text-sm text-gray-600">Duration</p>
                 <p className="font-semibold">
                   {minutes}:{seconds.toString().padStart(2, '0')}
                 </p>
               </div>
-              <div>
+              {/* <div>
                 <p className="text-sm text-gray-600">Published</p>
                 <p className="font-semibold">{video.createdAt}</p>
-              </div>
+              </div> */}
             </div>
 
             {/* Tags */}
-            {video.tags.length > 0 && (
+            {/* {video.tags.length > 0 && (
               <div className="mt-6">
                 <p className="text-sm text-gray-600 mb-2">Tags</p>
                 <div className="flex flex-wrap gap-2">
@@ -177,7 +177,7 @@ export default function VideoPlayerPage() {
                   ))}
                 </div>
               </div>
-            )}
+            )} */}
           </div>
         </div>
       </div>
