@@ -64,52 +64,16 @@ export default function PlaylistDetailPage() {
       </button>
 
       {/* Playlist Header */}
-      <div className="overflow-hidden rounded-2xl border border-teal-100 bg-linear-to-br from-teal-50 via-white to-teal-50 shadow-lg">
-        <div className="grid grid-cols-1 gap-6 p-5 md:grid-cols-3 md:gap-8 md:p-8">
-          {/* Thumbnail */}
-          <div className="md:col-span-1">
-            <div className="relative overflow-hidden rounded-xl border border-teal-100 shadow-md">
-              <Image
-                src={playlist.thumbnail}
-                alt={playlist.title}
-                width={800}
-                height={450}
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="h-auto w-full"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/30 via-black/5 to-transparent" />
-            </div>
-          </div>
-
-          {/* Info */}
-          <div className="md:col-span-2 space-y-5">
-            <div className="space-y-3">
-              <h1 className="text-3xl font-bold leading-tight text-gray-900 md:text-4xl">{playlist.title}</h1>
-              <p className="text-base text-gray-600 md:text-lg">{playlist.description}</p>
-            </div>
-
-            <div className="flex flex-wrap gap-3">
-              <div className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-700 shadow-sm ring-1 ring-gray-200">
-                {playlist.videos.length} videos
-              </div>
-              <div className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-700 shadow-sm ring-1 ring-gray-200">
-                {totalMinutes} minutes
-              </div>
-              <div className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-700 shadow-sm ring-1 ring-gray-200">
-                Updated {playlist.createdAt}
-              </div>
-            </div>
-
-            {/* <button className="mt-2 w-full rounded-lg bg-teal-600 px-6 py-3 text-lg font-semibold text-white transition hover:bg-teal-700 md:w-auto">
-              Start Playlist →
-            </button> */}
-          </div>
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
+        <div className="md:col-span-3 space-y-3">
+          <h1 className="text-3xl font-bold text-gray-900 md:text-4xl">{playlist.title}</h1>
+          <p className="text-gray-600">{playlist.description}</p>
+          
         </div>
       </div>
 
       {/* Video List */}
       <div className="space-y-4">
-        <h2 className="text-2xl font-bold">Videos in this Playlist</h2>
         <div className="space-y-4">
           {playlist.videos.map((video) => (
             <Link
