@@ -21,6 +21,11 @@ export interface PlaylistVideo extends Video {
   order: number;
 }
 
+export interface PlaylistResource {
+  title: string;
+  url: string;
+}
+
 export interface Playlist {
   id: string;
   title: string;
@@ -28,6 +33,7 @@ export interface Playlist {
   videos: PlaylistVideo[];
   thumbnail: string;
   createdAt: string;
+  additionalResources?: PlaylistResource[];
 }
 
 export interface UserProgress {

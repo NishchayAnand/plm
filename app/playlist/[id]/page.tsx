@@ -68,7 +68,24 @@ export default function PlaylistDetailPage() {
         <div className="md:col-span-3 space-y-3">
           <h1 className="text-3xl font-bold text-gray-900 md:text-4xl">{playlist.title}</h1>
           <p className="text-gray-600">{playlist.description}</p>
-          
+          {playlist.additionalResources && playlist.additionalResources.length > 0 && (
+            <div className="pt-1">
+              {/* <p className="text-sm font-semibold text-gray-700 mb-2">Additional Resources</p> */}
+              <div className="flex flex-wrap gap-2">
+                {playlist.additionalResources.map((resource) => (
+                  <a
+                    key={resource.url}
+                    href={resource.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center rounded-lg bg-teal-50 px-3 py-1.5 text-sm font-medium text-teal-700 hover:bg-teal-100 transition"
+                  >
+                    {resource.title} (PDF)
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
@@ -108,8 +125,8 @@ export default function PlaylistDetailPage() {
                   <span>{Math.floor(video.duration / 60)} min</span>
                   <span>•</span>
                   <span>{video.level}</span>
-                  <span>•</span>
-                  <span>By {video.instructor}</span>
+                  {/* <span>•</span>
+                  <span>By {video.instructor}</span> */}
                 </div>
               </div>
             </Link>

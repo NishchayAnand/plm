@@ -60,6 +60,32 @@ export default function Home() {
         <VideoGrid videos={featuredVideos} loading={loading} />
       </section>
 
+      {/* CTA Section */}
+      <section className="bg-gray-50 rounded-lg p-6 md:p-8 text-center">
+        {/* <h2 className="text-2xl md:text-3xl font-semibold mb-2">Workflow Resources</h2> */}
+        <p className="text-gray-600 mb-4 max-w-xl mx-auto text-sm md:text-base">
+          Quick access to the workflow PDF and full training video.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <a
+            href="/additional-resources/Vendor%20PLM%20Workflow.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-teal-600 text-white px-6 py-2.5 rounded-lg font-medium hover:bg-teal-700 transition"
+          >
+            Workflow PDF
+          </a>
+          <a
+            href="https://vimeo.com/1173021240?share=copy&fl=sv&fe=ci"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-white text-teal-700 px-6 py-2.5 rounded-lg font-medium border border-teal-600 hover:bg-teal-50 transition"
+          >
+            Training Video
+          </a>
+        </div>
+      </section>
+
       {/* Playlists Section */}
       <section>
         <h2 className="text-3xl font-bold mb-6">Learning Paths</h2>
@@ -92,19 +118,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-gray-100 rounded-lg p-8 md:p-12 text-center">
-        <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-        <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-          Join textile vendors worldwide who are mastering PLM software with our comprehensive training content.
-        </p>
-        <Link
-          href="/catalog"
-          className="inline-block bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition"
-        >
-          Start Learning Today
-        </Link>
-      </section>
+      
 
     </div>
   );

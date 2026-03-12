@@ -166,6 +166,12 @@ export const mockPlaylists: Playlist[] = [
     description: 'Complete beginner guide to PLM systems for textile vendors',
     thumbnail: '/thumbnail/beginner-module.jpeg',
     createdAt: '2026-03-11',
+    additionalResources: [
+      {
+        title: 'Beginner Level Guide',
+        url: '/additional-resources/beginner-level.pdf',
+      },
+    ],
     videos: [
       { ...mockVideos[0], order: 1 },
       { ...mockVideos[1], order: 2 },
@@ -177,6 +183,12 @@ export const mockPlaylists: Playlist[] = [
     description: 'Essential intermediate workflows for day-to-day PLM operations',
     thumbnail: '/thumbnail/intermediate-module.jpeg',
     createdAt: '2026-03-11',
+    additionalResources: [
+      {
+        title: 'Intermediate Level Guide',
+        url: '/additional-resources/intermediate-level.pdf',
+      },
+    ],
     videos: [
       { ...mockVideos[3], order: 1 },
       { ...mockVideos[3], order: 2 },
@@ -190,6 +202,12 @@ export const mockPlaylists: Playlist[] = [
     description: 'Advanced concepts and integrations for experienced users',
     thumbnail: '/thumbnail/advanced-module.jpeg',
     createdAt: '2026-03-11',
+    additionalResources: [
+      {
+        title: 'Advanced Level Guide',
+        url: '/additional-resources/advanced-level.pdf',
+      },
+    ],
     videos: [
       { ...mockVideos[6], order: 1 },
       { ...mockVideos[7], order: 2 },
