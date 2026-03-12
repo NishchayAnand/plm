@@ -22,9 +22,9 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 font-bold text-lg">
-            <div className="w-8 h-8 bg-white rounded flex items-center justify-center text-teal-600">
+            {/* <div className="w-8 h-8 bg-white rounded flex items-center justify-center text-teal-600">
               📚
-            </div>
+            </div> */}
             <span className="hidden sm:inline">PLM Library</span>
           </Link>
 
@@ -51,7 +51,6 @@ export default function Header() {
               className="bg-transparent outline-none w-32 md:w-48 px-2 text-gray-800 placeholder-gray-800"
             />
             <button type="submit" className="text-white hover:text-gray-800 transition">
-              🔍
             </button>
           </form>
 
