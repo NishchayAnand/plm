@@ -30,8 +30,7 @@ export default function Home() {
       <section className="bg-linear-to-r from-teal-600 to-teal-800 text-white rounded-lg p-8 md:p-12 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Learn PLM Software</h1>
         <p className="text-lg md:text-xl mb-6 max-w-2xl">
-          Master Product Lifecycle Management with our comprehensive video library designed for textile vendors.
-          From basics to advanced integrations, we've got you covered.
+          Master Product Lifecycle Management with our comprehensive video library designed for vendors.
         </p>
         {/* <div className="flex gap-4 flex-wrap">
           <Link
