@@ -41,7 +41,7 @@ export const mockVideos: Video[] = [
     views: 0,
     createdAt: '2026-03-11',
     instructor: 'Emily Rodriguez',
-    level: 'Beginner',
+    level: 'Intermediate',
     tags: ['status', 'fpt report', 'gpt report', 'download'],
   },
   {
@@ -97,7 +97,7 @@ export const mockVideos: Video[] = [
     views: 0,
     createdAt: '2026-03-11',
     instructor: 'PLM Training Team',
-    level: 'Intermediate',
+    level: 'Advanced',
     tags: ['tna', 'timeline', 'tna dates', 'schedule update'],
   },
   {
@@ -190,7 +190,7 @@ export const mockPlaylists: Playlist[] = [
       },
     ],
     videos: [
-      { ...mockVideos[3], order: 1 },
+      { ...mockVideos[2], order: 1 },
       { ...mockVideos[3], order: 2 },
       { ...mockVideos[4], order: 3 },
       { ...mockVideos[5], order: 4 },
